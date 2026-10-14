@@ -5,10 +5,10 @@ import "./globals.css";
 const italiana = Italiana({ variable: "--font-italiana", subsets: ["latin"], weight: "400" });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ClothingStore","name":"Modewear","description":"Label pakaian kerja yang dijahit setelah dipesan","url":"https://landing-modewear.vercel.app"};
+const __jsonld = {"@context":"https://schema.org","@type":"ClothingStore","name":"Modewear","description":"Label pakaian kerja yang dijahit setelah dipesan","url":"https://landing-modewear.pintuweb.id"};
 
 export const metadata = {
-  metadataBase: new URL("https://landing-modewear.vercel.app"),
+  metadataBase: new URL("https://landing-modewear.pintuweb.id"),
   title: { default: "Modewear — Pakaian Kerja yang Dijahit Setelah Dipesan", template: "%s — Modewear" },
   description: "Modewear Kapsul 05 \"Kota\": delapan potong pakaian kerja dari satu palet, dijahit setelah dipesan. Pra-pesan ditutup 25 Oktober 2026; panduan ukuran tersedia.",
   applicationName: "MODEWEAR",
@@ -16,11 +16,11 @@ export const metadata = {
   authors: [{ name: "MODEWEAR" }],
   creator: "MODEWEAR",
   publisher: "MODEWEAR",
-  alternates: { canonical: "https://landing-modewear.vercel.app" },
+  alternates: { canonical: "https://landing-modewear.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://landing-modewear.vercel.app",
+    url: "https://landing-modewear.pintuweb.id",
     siteName: "MODEWEAR",
     title: "Modewear — Pakaian Kerja yang Dijahit Setelah Dipesan",
     description: "Modewear Kapsul 05 \"Kota\": delapan potong pakaian kerja dari satu palet, dijahit setelah dipesan. Pra-pesan ditutup 25 Oktober 2026; panduan ukuran tersedia.",

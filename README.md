@@ -2,7 +2,7 @@
 
 Modewear Kapsul 05 "Kota": delapan potong pakaian kerja dari satu palet, dijahit setelah dipesan. Pra-pesan ditutup 25 Oktober 2026; panduan ukuran tersedia.
 
-**Demo live:** https://landing-modewear.vercel.app
+**Demo live:** https://landing-modewear.pintuweb.id
 
 ![Tangkapan layar Modewear](public/og.jpg)
 
