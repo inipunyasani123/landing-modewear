@@ -22,7 +22,7 @@ export function Hero() {
           <div className="mt-10 border-t border-onyx/15 pt-6 md:mt-12"><HitungMundur tutup={g.tutup} tutupTeks={g.tutupTeks} tutupPendek={g.tutupPendek} /></div>
         </div>
         <figure>
-          <Image src="/images/editorial/kota.webp" alt="Perempuan bermantel cokelat dan celana lebar berjalan di trotoar bata" width={960} height={1200} priority className="h-auto w-full" />
+          <Image src="/images/editorial/kota.webp" alt="Perempuan bermantel cokelat dan celana lebar berjalan di trotoar bata" width={960} height={1200} priority sizes="(min-width: 1024px) 31rem, 100vw" className="h-auto w-full" />
           <figcaption className="label-caps mt-3 text-thread">Foto suasana (CC0) — bukan produk Modewear</figcaption>
         </figure>
       </div>
@@ -54,7 +54,7 @@ export function Prinsip() {
     <section className="bg-bone px-6 py-16 md:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-10 md:gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="aspect-[16/10] overflow-hidden sm:aspect-auto">
-          <Image src="/images/editorial/kemeja.webp" alt="Tumpukan kemeja terlipat rapi di atas meja kayu toko" width={960} height={1200} className="h-full w-full object-cover sm:h-auto" />
+          <Image src="/images/editorial/kemeja.webp" alt="Tumpukan kemeja terlipat rapi di atas meja kayu toko" width={960} height={1200} sizes="(min-width: 1024px) 28rem, 100vw" className="h-full w-full object-cover sm:h-auto" />
         </div>
         <div>
           <p className="label-caps text-rouge">Cara kami membuat</p>
@@ -92,7 +92,7 @@ export function Lookbook() {
           {LOOK.map(([f, alt, ket, slug]) => (
             <li key={f} className="w-[72%] shrink-0 snap-center md:w-auto">
               <Link href={`/koleksi/${slug}`} className="group block">
-                <Image src={`/images/editorial/${f}.webp`} alt={alt} width={960} height={1200} className="h-auto w-full transition-opacity group-hover:opacity-90" />
+                <Image src={`/images/editorial/${f}.webp`} alt={alt} width={960} height={1200} sizes="(min-width: 768px) 30vw, 72vw" className="h-auto w-full transition-opacity group-hover:opacity-90" />
                 <span className="label-caps mt-4 block text-bone/80">{ket}</span>
               </Link>
             </li>
