@@ -1,9 +1,16 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ITEM, KAPSUL, SITE, itemBySlug, rp } from '@/lib/koleksi';
+import { ITEM, KAPSUL, SITE, gelombang, itemBySlug, rp } from '@/lib/koleksi';
 import { ContohKain, LabelJahit } from '../../components/KartuItem';
 import LabelRawat from '../../components/LabelRawat';
 import PraPesan from '../../components/PraPesan';
+
+/* Deskripsi meta maksimal 155 karakter: dipotong di akhir kalimat bila bisa, kalau tidak di batas kata. */
+const ringkas = (t, n = 155) => {
+  if (t.length <= n) return t;
+  const titik = t.lastIndexOf('. ', n - 1);
+  return titik > 80 ? t.slice(0, titik + 1) : `${t.slice(0, t.lastIndexOf(' ', n - 1))}…`;
+};
 
 export function generateStaticParams() {
   return ITEM.map((i) => ({ slug: i.slug }));
@@ -15,7 +22,7 @@ export async function generateMetadata({ params }) {
   if (!i) return {};
   return {
     title: i.nama,
-    description: `${i.nama} Modewear Kapsul ${KAPSUL.nomor}: ${i.bahan}, ${i.berat}. ${i.ringkas}`,
+    description: ringkas(`${i.nama} Modewear, Kapsul ${KAPSUL.nomor}: ${i.bahan}. ${i.ringkas} ${i.pas}`),
     alternates: { canonical: `${SITE}/koleksi/${i.slug}` },
   };
 }
@@ -24,20 +31,21 @@ export default async function Item({ params }) {
   const { slug } = await params;
   const item = itemBySlug(slug);
   if (!item) notFound();
+  const g = gelombang();
   const padanan = ITEM.filter((x) => x.slug !== item.slug && x.jenis !== item.jenis).slice(0, 3);
   const ld = { '@context': 'https://schema.org', '@type': 'Product', name: item.nama, material: item.bahan, brand: { '@type': 'Brand', name: 'Modewear' }, offers: { '@type': 'Offer', price: item.harga, priceCurrency: 'IDR', availability: 'https://schema.org/PreOrder' } };
 
   return (
-    <main className="bg-bone px-6 pt-28 pb-24">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
-        <div className="grid gap-4 sm:grid-cols-2">
+    <main className="bg-bone px-6 pt-24 pb-20 md:pt-28 md:pb-24">
+      <div className="mx-auto grid max-w-6xl gap-10 md:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+        <div className="grid grid-cols-2 gap-3 self-start sm:gap-4 lg:sticky lg:top-24">
           {item.warna.map(([n, h]) => (
             <figure key={n}>
-              <ContohKain hex={h} className="aspect-[4/5] w-full" />
+              <ContohKain hex={h} className="aspect-square w-full sm:aspect-[4/5]" />
               <figcaption className="label-caps mt-2 text-thread">Contoh kain · {n}</figcaption>
             </figure>
           ))}
-          <div className="sm:col-span-2"><LabelJahit item={item} /></div>
+          <div className="col-span-2"><LabelJahit item={item} /></div>
         </div>
 
         <div>
@@ -50,7 +58,7 @@ export default async function Item({ params }) {
             <div className="bg-bone p-4"><dt className="label-caps">Berat kain</dt><dd className="mt-1 text-onyx">{item.berat}</dd></div>
             <div className="bg-bone p-4 sm:col-span-2"><dt className="label-caps">Pas di badan</dt><dd className="mt-1 text-onyx">{item.pas}</dd></div>
           </dl>
-          <div className="mt-10"><PraPesan item={item} /></div>
+          <div className="mt-10"><PraPesan item={item} kirim={g.kirimTeks} /></div>
           <section aria-labelledby="rawat" className="mt-12 border-t border-onyx/15 pt-8">
             <h2 id="rawat" className="label-caps mb-5 text-onyx">Perawatan</h2>
             <LabelRawat kode={item.rawat} />
@@ -58,7 +66,7 @@ export default async function Item({ params }) {
         </div>
       </div>
 
-      <section aria-labelledby="padan" className="mx-auto mt-20 max-w-6xl border-t border-onyx/15 pt-12">
+      <section aria-labelledby="padan" className="mx-auto mt-16 max-w-6xl border-t border-onyx/15 pt-10 md:mt-20 md:pt-12">
         <h2 id="padan" className="text-4xl text-onyx">Dipadankan dengan</h2>
         <ul className="mt-8 grid gap-6 sm:grid-cols-3">
           {padanan.map((p) => (

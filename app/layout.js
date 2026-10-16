@@ -7,12 +7,17 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 const __jsonld = {"@context":"https://schema.org","@type":"ClothingStore","name":"Modewear","description":"Label pakaian kerja yang dijahit setelah dipesan","url":"https://landing-modewear.pintuweb.id"};
 
+const DESKRIPSI = "Modewear Kapsul 05 \"Kota\": delapan potong pakaian kerja dari satu palet, dijahit setelah dipesan per gelombang bulanan. Panduan ukuran tersedia.";
+
+// Tenggat gelombang jahit dihitung dari waktu sekarang (lib/koleksi.js), jadi halaman dibangun ulang tiap jam.
+export const revalidate = 3600;
+
 export const metadata = {
   metadataBase: new URL("https://landing-modewear.pintuweb.id"),
   title: { default: "Modewear — Pakaian Kerja yang Dijahit Setelah Dipesan", template: "%s — Modewear" },
-  description: "Modewear Kapsul 05 \"Kota\": delapan potong pakaian kerja dari satu palet, dijahit setelah dipesan. Pra-pesan ditutup 25 Oktober 2026; panduan ukuran tersedia.",
+  description: DESKRIPSI,
   applicationName: "MODEWEAR",
-  keywords: ["fashion", "koleksi fashion", "pakaian", "online fashion store", "gaya"],
+  keywords: ["pakaian kerja", "kemeja linen", "celana bahan", "pakaian pra-pesan", "kapsul pakaian"],
   authors: [{ name: "MODEWEAR" }],
   creator: "MODEWEAR",
   publisher: "MODEWEAR",
@@ -23,13 +28,13 @@ export const metadata = {
     url: "https://landing-modewear.pintuweb.id",
     siteName: "MODEWEAR",
     title: "Modewear — Pakaian Kerja yang Dijahit Setelah Dipesan",
-    description: "Modewear Kapsul 05 \"Kota\": delapan potong pakaian kerja dari satu palet, dijahit setelah dipesan. Pra-pesan ditutup 25 Oktober 2026; panduan ukuran tersedia.",
+    description: DESKRIPSI,
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Modewear — Pakaian Kerja yang Dijahit Setelah Dipesan" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Modewear — Pakaian Kerja yang Dijahit Setelah Dipesan",
-    description: "Modewear Kapsul 05 \"Kota\": delapan potong pakaian kerja dari satu palet, dijahit setelah dipesan. Pra-pesan ditutup 25 Oktober 2026; panduan ukuran tersedia.",
+    description: DESKRIPSI,
     images: ["/og.jpg"],
   },
   robots: {

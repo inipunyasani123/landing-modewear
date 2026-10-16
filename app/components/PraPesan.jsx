@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { KAPSUL, rp } from '@/lib/koleksi';
+import { rp } from '@/lib/koleksi';
 
-export default function PraPesan({ item }) {
+export default function PraPesan({ item, kirim }) {
   const [warna, setWarna] = useState(item.warna[0][0]);
   const [ukuran, setUkuran] = useState('');
   const [selesai, setSelesai] = useState(false);
@@ -26,7 +26,7 @@ export default function PraPesan({ item }) {
         <legend className="label-caps mb-3 text-onyx">Warna: {warna}</legend>
         <div className="flex gap-3">
           {item.warna.map(([n, h]) => (
-            <label key={n} className={`cursor-pointer rounded-full p-1 ${warna === n ? 'ring-2 ring-onyx' : 'ring-1 ring-onyx/20'}`}>
+            <label key={n} className={`cursor-pointer rounded-full p-1 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-rouge ${warna === n ? 'ring-2 ring-onyx' : 'ring-1 ring-onyx/20'}`}>
               <input type="radio" name="warna" value={n} checked={warna === n} onChange={() => setWarna(n)} className="sr-only" />
               <span className="block h-9 w-9 rounded-full" style={{ background: h }} />
               <span className="sr-only">{n}</span>
@@ -38,7 +38,7 @@ export default function PraPesan({ item }) {
         <legend className="label-caps mb-3 text-onyx">Ukuran</legend>
         <div className="flex flex-wrap gap-2">
           {item.ukuran.map((u) => (
-            <label key={u} className={`flex h-11 min-w-12 cursor-pointer items-center justify-center border px-3 text-sm ${ukuran === u ? 'border-onyx bg-onyx text-bone' : 'border-onyx/25 text-onyx hover:border-onyx'}`}>
+            <label key={u} className={`flex h-11 min-w-12 cursor-pointer items-center justify-center border px-3 text-sm has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-rouge ${ukuran === u ? 'border-onyx bg-onyx text-bone' : 'border-onyx/25 text-onyx hover:border-onyx'}`}>
               <input type="radio" name="ukuran" value={u} required checked={ukuran === u} onChange={() => setUkuran(u)} className="sr-only" />
               {u}
             </label>
@@ -49,7 +49,7 @@ export default function PraPesan({ item }) {
       <button type="submit" className="w-full bg-onyx py-4 text-sm font-semibold tracking-wide text-bone hover:bg-rouge">
         Pra-pesan · {rp(item.harga)}
       </button>
-      <p className="text-xs leading-relaxed text-thread">Dikirim mulai {KAPSUL.kirim}. Purwarupa desain — tidak ada data yang dikirim.</p>
+      <p className="text-xs leading-relaxed text-thread">Gelombang ini dikirim mulai {kirim}. Purwarupa desain — tidak ada data yang dikirim.</p>
     </form>
   );
 }

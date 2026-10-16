@@ -1,23 +1,24 @@
 import Link from 'next/link';
-import { KAPSUL } from '@/lib/koleksi';
-
-const NAV = [['/koleksi', 'Koleksi'], ['/#lookbook', 'Lookbook'], ['/panduan-ukuran', 'Panduan ukuran']];
+import { KAPSUL, gelombang } from '@/lib/koleksi';
+import Navigasi from './Navigasi';
 
 export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-onyx/10 bg-bone/90 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
         <Link href="/" className="text-base font-semibold tracking-[0.3em] text-onyx">MODEWEAR</Link>
-        <nav aria-label="Navigasi utama" className="hidden items-center gap-8 md:flex">
-          {NAV.map(([h, l]) => <Link key={h} href={h} className="label-caps text-thread hover:text-onyx">{l}</Link>)}
-        </nav>
-        <Link href="/koleksi" className="inline-flex bg-onyx px-4 py-2.5 text-xs font-semibold tracking-wide text-bone hover:bg-rouge">Pra-pesan Kapsul {KAPSUL.nomor}</Link>
+        <Navigasi>
+          <Link href="/koleksi" className="inline-flex h-10 items-center bg-onyx px-4 text-xs font-semibold tracking-wide text-bone hover:bg-rouge">
+            Pra-pesan<span className="hidden sm:inline">&nbsp;Kapsul {KAPSUL.nomor}</span>
+          </Link>
+        </Navigasi>
       </div>
     </header>
   );
 }
 
 export function SiteFooter() {
+  const g = gelombang();
   return (
     <footer className="bg-onyx px-6 text-bone">
       <div className="mx-auto grid max-w-6xl gap-10 py-14 md:grid-cols-[minmax(0,1.4fr)_repeat(2,minmax(0,1fr))]">
@@ -34,8 +35,8 @@ export function SiteFooter() {
           </ul>
         </nav>
         <div>
-          <p className="label-caps mb-4 text-bone/80">Jadwal kapsul {KAPSUL.nomor}</p>
-          <p className="text-sm leading-relaxed text-bone/80">Pra-pesan ditutup {KAPSUL.tutupTeks}. Pengiriman mulai {KAPSUL.kirim}.</p>
+          <p className="label-caps mb-4 text-bone/80">Gelombang jahit {g.bulan}</p>
+          <p className="text-sm leading-relaxed text-bone/80">Pra-pesan ditutup {g.tutupTeks}. Pengiriman mulai {g.kirimTeks}. Setiap bulan dibuka gelombang baru.</p>
         </div>
       </div>
       <p className="label-caps mx-auto max-w-6xl border-t border-bone/15 py-6 leading-[1.9] text-bone/70">© 2026 Modewear · Nama, harga, dan jadwal adalah contoh untuk purwarupa desain · Foto: StockSnap (CC0)</p>
