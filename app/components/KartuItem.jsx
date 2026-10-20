@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { rp } from '@/lib/koleksi';
 import LabelRawat from './LabelRawat';
 
-/* Kartu potongan pakaian: contoh kain (warna pertama) dengan tekstur tenun,
-   label jahit menempel di atasnya. Tidak memakai foto produk. */
+/* Kartu potongan pakaian: gambar teknis (flat) dalam warna kain pertama di atas latar sewarna kain,
+   label jahit menempel di atasnya. Produknya fiktif, jadi gambarnya ilustrasi, bukan foto produk. */
 export function ContohKain({ hex, className = '' }) {
   return (
     <div
@@ -35,7 +36,13 @@ export default function KartuItem({ item, tingkat = 'h3' }) {
   return (
     <Link href={`/koleksi/${item.slug}`} className="group block">
       <div className="relative aspect-[4/5] overflow-hidden">
-        <ContohKain hex={item.warna[0][1]} className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.03]" />
+        <Image
+          src={`/images/koleksi/${item.slug}.webp`}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 17rem, (min-width: 640px) 30vw, 45vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
         <div className="absolute right-3 bottom-3 left-3 sm:right-5 sm:bottom-5 sm:left-5">
           <LabelJahit item={item} kecil />
         </div>

@@ -47,6 +47,8 @@ Foto suasana berlisensi **CC0 (domain publik)** dari StockSnap; pakaian di foto 
 - `public/images/editorial/kemeja.webp` — "Dressshirts Fashion" oleh Patryk Dziejma ([sumber](https://stocksnap.io/photo/dressshirts-fashion-TS7R6391UQ)). Dipotong ke 4:5.
 - `public/images/editorial/lemari.webp` — "Wardrobe Closet" oleh Oliver Klein ([sumber](https://stocksnap.io/photo/wardrobe-closet-YISUDLOYC3)). Dipotong ke 4:5.
 
+Gambar delapan potong pakaian di `public/images/koleksi/` adalah gambar teknis (flat) buatan sendiri untuk produk fiktif, bukan foto. Daftar lengkap: `public/images/SUMBER.md`.
+
 ---
 
 Bagian dari koleksi 17 template landing page di [PortalLanding](https://www.pintuweb.id/landing-page). Dibuat oleh [PintuWeb](https://www.pintuweb.id), jasa pembuatan website.

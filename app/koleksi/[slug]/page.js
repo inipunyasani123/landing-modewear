@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ITEM, KAPSUL, SITE, gelombang, itemBySlug, rp } from '@/lib/koleksi';
@@ -33,16 +34,27 @@ export default async function Item({ params }) {
   if (!item) notFound();
   const g = gelombang();
   const padanan = ITEM.filter((x) => x.slug !== item.slug && x.jenis !== item.jenis).slice(0, 3);
-  const ld = { '@context': 'https://schema.org', '@type': 'Product', name: item.nama, material: item.bahan, brand: { '@type': 'Brand', name: 'Modewear' }, offers: { '@type': 'Offer', price: item.harga, priceCurrency: 'IDR', availability: 'https://schema.org/PreOrder' } };
+  const ld = { '@context': 'https://schema.org', '@type': 'Product', name: item.nama, image: `${SITE}/images/koleksi/${item.slug}-${item.warna[0][1].slice(1)}.webp`, material: item.bahan, brand: { '@type': 'Brand', name: 'Modewear' }, offers: { '@type': 'Offer', price: item.harga, priceCurrency: 'IDR', availability: 'https://schema.org/PreOrder' } };
 
   return (
     <main className="bg-bone px-6 pt-24 pb-20 md:pt-28 md:pb-24">
       <div className="mx-auto grid max-w-6xl gap-10 md:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
         <div className="grid grid-cols-2 gap-3 self-start sm:gap-4 lg:sticky lg:top-24">
-          {item.warna.map(([n, h]) => (
+          {item.warna.map(([n, h], i) => (
             <figure key={n}>
-              <ContohKain hex={h} className="aspect-square w-full sm:aspect-[4/5]" />
-              <figcaption className="label-caps mt-2 text-thread">Contoh kain · {n}</figcaption>
+              <Image
+                src={`/images/koleksi/${item.slug}-${h.slice(1)}.webp`}
+                alt={`${item.nama} warna ${n.toLowerCase()}, gambar teknis tampak depan`}
+                width={960}
+                height={1200}
+                priority={i === 0}
+                sizes="(min-width: 1152px) 18rem, (min-width: 1024px) 25vw, 45vw"
+                className="aspect-[4/5] h-auto w-full object-cover"
+              />
+              <figcaption className="label-caps mt-2 flex items-center gap-2 text-thread">
+                <ContohKain hex={h} className="h-3.5 w-3.5 shrink-0 border border-onyx/20" />
+                {n}
+              </figcaption>
             </figure>
           ))}
           <div className="col-span-2"><LabelJahit item={item} /></div>
@@ -72,7 +84,7 @@ export default async function Item({ params }) {
           {padanan.map((p) => (
             <li key={p.slug}>
               <Link href={`/koleksi/${p.slug}`} className="flex items-center gap-4 border border-onyx/12 p-4 hover:border-onyx">
-                <ContohKain hex={p.warna[0][1]} className="h-16 w-14 shrink-0" />
+                <Image src={`/images/koleksi/${p.slug}.webp`} alt="" width={56} height={70} className="h-[4.4rem] w-14 shrink-0 object-cover" />
                 <span><span className="block text-onyx">{p.nama}</span><span className="text-sm">{rp(p.harga)}</span></span>
               </Link>
             </li>
