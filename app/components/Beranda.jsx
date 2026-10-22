@@ -22,8 +22,8 @@ export function Hero() {
           <div className="mt-10 border-t border-onyx/15 pt-6 md:mt-12"><HitungMundur tutup={g.tutup} tutupTeks={g.tutupTeks} tutupPendek={g.tutupPendek} /></div>
         </div>
         <figure>
-          <Image src="/images/editorial/kota.webp" alt="Perempuan bermantel cokelat dan celana lebar berjalan di trotoar bata" width={960} height={1200} priority sizes="(min-width: 1024px) 31rem, 100vw" className="h-auto w-full" />
-          <figcaption className="label-caps mt-3 text-thread">Foto suasana (CC0) — bukan produk Modewear</figcaption>
+          <Image src="/images/lookbook/kota.webp" alt="Ilustrasi fesyen: perempuan bersanggul di trotoar kota memakai Outer Tanpa Kerah cokelat unta, Kemeja Linen Rami putih tulang, dan Celana Kulot Lebar pasir" width={960} height={1200} priority sizes="(min-width: 1024px) 31rem, 100vw" className="h-auto w-full" />
+          <figcaption className="label-caps mt-3 text-thread">Ilustrasi · Outer Tanpa Kerah, Kemeja Linen Rami, Kulot Lebar</figcaption>
         </figure>
       </div>
     </section>
@@ -77,9 +77,9 @@ export function Prinsip() {
 }
 
 const LOOK = [
-  ['dermaga', 'Perempuan bersweater krem berdiri di tepi dermaga', 'Kaus tebal · Krem', 'kaus-tebal'],
-  ['atap', 'Laki-laki berjas duduk di kursi di atap gedung', 'Celana bahan lurus · Abu batu', 'celana-lurus'],
-  ['pintu', 'Perempuan bergaun biru muda bersandar di pintu toska', 'Gaun kemeja · Biru muda', 'gaun-kemeja'],
+  ['dermaga', 'Ilustrasi fesyen: perempuan berambut bob di dermaga memakai Kaus Kerah Bulat Tebal krem dan Celana Bahan Lurus biru dongker', 'Kaus tebal · Krem', 'kaus-tebal'],
+  ['atap', 'Ilustrasi fesyen: laki-laki di atap gedung memakai Kemeja Katun Oxford biru muda dan Celana Bahan Lurus abu batu', 'Celana bahan lurus · Abu batu', 'celana-lurus'],
+  ['pintu', 'Ilustrasi fesyen: perempuan berhijab di depan pintu hijau memakai Gaun Kemeja biru muda bertali pinggang', 'Gaun kemeja · Biru muda', 'gaun-kemeja'],
 ];
 
 export function Lookbook() {
@@ -92,13 +92,13 @@ export function Lookbook() {
           {LOOK.map(([f, alt, ket, slug]) => (
             <li key={f} className="w-[72%] shrink-0 snap-center md:w-auto">
               <Link href={`/koleksi/${slug}`} className="group block">
-                <Image src={`/images/editorial/${f}.webp`} alt={alt} width={960} height={1200} sizes="(min-width: 768px) 30vw, 72vw" className="h-auto w-full transition-opacity group-hover:opacity-90" />
+                <Image src={`/images/lookbook/${f}.webp`} alt={alt} width={960} height={1200} sizes="(min-width: 768px) 30vw, 72vw" className="h-auto w-full transition-opacity group-hover:opacity-90" />
                 <span className="label-caps mt-4 block text-bone/80">{ket}</span>
               </Link>
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-sm text-bone/70 md:mt-8">Foto suasana dari StockSnap (CC0); pakaian di foto bukan produk Modewear.</p>
+        <p className="mt-6 text-sm text-bone/70 md:mt-8">Ilustrasi padanan Kapsul 05: tokohnya fiktif, pakaiannya potongan dari koleksi ini.</p>
       </div>
     </section>
   );

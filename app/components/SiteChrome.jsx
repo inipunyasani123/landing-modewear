@@ -39,7 +39,7 @@ export function SiteFooter() {
           <p className="text-sm leading-relaxed text-bone/80">Pra-pesan ditutup {g.tutupTeks}. Pengiriman mulai {g.kirimTeks}. Setiap bulan dibuka gelombang baru.</p>
         </div>
       </div>
-      <p className="label-caps mx-auto max-w-6xl border-t border-bone/15 py-6 leading-[1.9] text-bone/70">© 2026 Modewear · Nama, harga, dan jadwal adalah contoh untuk purwarupa desain · Foto: StockSnap (CC0)</p>
+      <p className="label-caps mx-auto max-w-6xl border-t border-bone/15 py-6 leading-[1.9] text-bone/70">© 2026 Modewear · Nama, harga, dan jadwal adalah contoh untuk purwarupa desain · Foto benda: StockSnap (CC0) · Ilustrasi: Modewear</p>
     </footer>
   );
 }
