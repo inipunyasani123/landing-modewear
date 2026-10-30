@@ -49,7 +49,7 @@ export default async function Item({ params }) {
             sizes="(min-width: 1024px) 28rem, 100vw"
             className="aspect-[4/5] h-auto w-full object-cover"
           />
-          <p className="mt-3 text-xs leading-relaxed text-thread">Foto hanya contoh potongan sejenis. Warna kain sebenarnya dipilih lewat chip warna di samping.</p>
+          <p className="mt-3 text-xs leading-relaxed text-thread">Foto hanya gambaran potongan sejenis. Warna kain sebenarnya dipilih lewat chip warna di samping.</p>
           <div className="mt-6"><LabelJahit item={item} /></div>
         </div>
 
