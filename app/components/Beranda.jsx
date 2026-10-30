@@ -13,7 +13,7 @@ export function Hero() {
           <p className="label-caps text-rouge">Kapsul {KAPSUL.nomor} · {KAPSUL.nama}</p>
           <h1 className="mt-5 text-[3rem] leading-[0.98] text-onyx sm:text-7xl md:mt-6 lg:text-[5.4rem]">Delapan potong untuk lima hari kerja</h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed md:mt-7">
-            Kemeja, celana, outer, dan gaun dari satu palet — setiap atasan cocok dengan setiap bawahan. Dijahit setelah Anda memesan, jadi tidak ada yang berakhir di rak obral.
+            Kemeja, celana, blazer, dan gaun dari satu palet — setiap atasan cocok dengan setiap bawahan. Dijahit setelah Anda memesan, jadi tidak ada yang berakhir di rak obral.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4 md:mt-9">
             <Link href="/koleksi" className="inline-flex justify-center bg-onyx px-8 py-4 text-sm font-semibold tracking-wide text-bone hover:bg-rouge">Lihat delapan potong</Link>
@@ -22,8 +22,8 @@ export function Hero() {
           <div className="mt-10 border-t border-onyx/15 pt-6 md:mt-12"><HitungMundur tutup={g.tutup} tutupTeks={g.tutupTeks} tutupPendek={g.tutupPendek} /></div>
         </div>
         <figure>
-          <Image src="/images/lookbook/kota.webp" alt="Ilustrasi fesyen: perempuan bersanggul di trotoar kota memakai Outer Tanpa Kerah cokelat unta, Kemeja Linen Rami putih tulang, dan Celana Kulot Lebar pasir" width={960} height={1200} priority sizes="(min-width: 1024px) 31rem, 100vw" className="h-auto w-full" />
-          <figcaption className="label-caps mt-3 text-thread">Ilustrasi · Outer Tanpa Kerah, Kemeja Linen Rami, Kulot Lebar</figcaption>
+          <Image src="/images/lookbook/kota.webp" alt="Ilustrasi fesyen: perempuan bersanggul di trotoar kota memakai Blazer Katun cokelat unta, Kemeja Linen Rami putih tulang, dan Celana Kulot Lebar pasir" width={960} height={1200} priority sizes="(min-width: 1024px) 31rem, 100vw" className="h-auto w-full" />
+          <figcaption className="label-caps mt-3 text-thread">Ilustrasi · Blazer Katun, Kemeja Linen Rami, Kulot Lebar</figcaption>
         </figure>
       </div>
     </section>
@@ -79,7 +79,7 @@ export function Prinsip() {
 const LOOK = [
   ['dermaga', 'Ilustrasi fesyen: perempuan berambut bob di dermaga memakai Kaus Kerah Bulat Tebal krem dan Celana Bahan Lurus biru dongker', 'Kaus tebal · Krem', 'kaus-tebal'],
   ['atap', 'Ilustrasi fesyen: laki-laki di atap gedung memakai Kemeja Katun Oxford biru muda dan Celana Bahan Lurus abu batu', 'Celana bahan lurus · Abu batu', 'celana-lurus'],
-  ['pintu', 'Ilustrasi fesyen: perempuan berhijab di depan pintu hijau memakai Gaun Kemeja biru muda bertali pinggang', 'Gaun kemeja · Biru muda', 'gaun-kemeja'],
+  ['pintu', 'Ilustrasi fesyen: perempuan berhijab di depan pintu hijau memakai Gaun Lilit biru muda bertali pinggang', 'Gaun lilit · Biru muda', 'gaun-lilit'],
 ];
 
 export function Lookbook() {

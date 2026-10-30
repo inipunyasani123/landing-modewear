@@ -4,7 +4,7 @@ import HitungMundur from '../components/HitungMundur';
 
 export const metadata = {
   title: `Kapsul ${KAPSUL.nomor} “${KAPSUL.nama}”`,
-  description: `Delapan potong Kapsul ${KAPSUL.nomor} “${KAPSUL.nama}” Modewear: kemeja, kaus, outer, celana, kulot, rok, dan gaun dari satu palet, dijahit setelah dipesan.`,
+  description: `Delapan potong Kapsul ${KAPSUL.nomor} “${KAPSUL.nama}” Modewear: kemeja, kaus, blazer, celana, kulot, rok, dan gaun dari satu palet, dijahit setelah dipesan.`,
   alternates: { canonical: `${SITE}/koleksi` },
 };
 
