@@ -6,9 +6,9 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-onyx/10 bg-bone/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
-        <Link href="/" className="text-base font-semibold tracking-[0.3em] text-onyx">MODEWEAR</Link>
+        <Link href="/" className="inline-flex min-h-11 items-center text-base font-semibold tracking-[0.3em] text-onyx">MODEWEAR</Link>
         <Navigasi>
-          <Link href="/koleksi" className="inline-flex h-10 items-center bg-onyx px-4 text-xs font-semibold tracking-wide text-bone hover:bg-rouge">
+          <Link href="/koleksi" className="inline-flex h-11 items-center bg-onyx px-4 text-xs font-semibold tracking-wide text-bone hover:bg-rouge">
             Pra-pesan<span className="hidden sm:inline">&nbsp;Kapsul {KAPSUL.nomor}</span>
           </Link>
         </Navigasi>
@@ -28,10 +28,10 @@ export function SiteFooter() {
         </div>
         <nav aria-label="Belanja">
           <p className="label-caps mb-4 text-bone/80">Belanja</p>
-          <ul className="space-y-2.5 text-sm text-bone/80">
-            <li><Link href="/koleksi" className="hover:text-bone">Semua potongan</Link></li>
-            <li><Link href="/panduan-ukuran" className="hover:text-bone">Panduan ukuran</Link></li>
-            <li><Link href="/#tanya" className="hover:text-bone">Pertanyaan umum</Link></li>
+          <ul className="space-y-0.5 text-sm text-bone/80">
+            <li><Link href="/koleksi" className="inline-block py-3 hover:text-bone">Semua potongan</Link></li>
+            <li><Link href="/panduan-ukuran" className="inline-block py-3 hover:text-bone">Panduan ukuran</Link></li>
+            <li><Link href="/#tanya" className="inline-block py-3 hover:text-bone">Pertanyaan umum</Link></li>
           </ul>
         </nav>
         <div>

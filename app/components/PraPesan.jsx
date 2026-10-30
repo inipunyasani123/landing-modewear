@@ -44,7 +44,7 @@ export default function PraPesan({ item, kirim }) {
             </label>
           ))}
         </div>
-        <Link href={`/panduan-ukuran?item=${item.slug}`} className="mt-3 inline-block text-sm text-rouge underline underline-offset-4">Belum yakin ukurannya? Buka panduan ukuran</Link>
+        <Link href={`/panduan-ukuran?item=${item.slug}`} className="mt-1 inline-block py-3 text-sm text-rouge underline underline-offset-4">Belum yakin ukurannya? Buka panduan ukuran</Link>
       </fieldset>
       <button type="submit" className="w-full bg-onyx py-4 text-sm font-semibold tracking-wide text-bone hover:bg-rouge">
         Pra-pesan · {rp(item.harga)}

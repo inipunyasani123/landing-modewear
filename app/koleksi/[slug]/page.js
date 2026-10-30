@@ -54,7 +54,7 @@ export default async function Item({ params }) {
         </div>
 
         <div>
-          <p className="label-caps text-rouge"><Link href="/koleksi" className="hover:underline">Kapsul {KAPSUL.nomor}</Link> · {item.jenis}</p>
+          <p className="label-caps text-rouge"><Link href="/koleksi" className="inline-block py-3 hover:underline">Kapsul {KAPSUL.nomor}</Link> · {item.jenis}</p>
           <h1 className="mt-4 text-[2.8rem] leading-[1] text-onyx md:text-6xl">{item.nama}</h1>
           <p className="mt-4 text-2xl text-onyx">{rp(item.harga)}</p>
           <p className="mt-6 text-lg leading-relaxed">{item.ringkas}</p>

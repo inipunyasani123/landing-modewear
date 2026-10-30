@@ -12,7 +12,7 @@ export default function SaringKoleksi() {
       <div role="group" aria-label="Saring menurut jenis" className="-mx-6 flex gap-2 overflow-x-auto border-b border-onyx/15 px-6 pb-5 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-6">
         {JENIS.map(([k, l]) => (
           <button key={k} type="button" aria-pressed={jenis === k} onClick={() => setJenis(k)}
-            className={`label-caps shrink-0 px-4 py-2.5 ${jenis === k ? 'bg-onyx text-bone' : 'border border-onyx/20 text-onyx hover:border-onyx'}`}>
+            className={`label-caps shrink-0 px-4 py-3.5 ${jenis === k ? 'bg-onyx text-bone' : 'border border-onyx/20 text-onyx hover:border-onyx'}`}>
             {l}
           </button>
         ))}

@@ -39,7 +39,7 @@ export function Kapsul() {
             <p className="label-caps text-rouge">Isi kapsul</p>
             <h2 className="mt-4 text-[2.4rem] leading-[1.05] text-onyx md:text-6xl">Satu palet, delapan label</h2>
           </div>
-          <Link href="/koleksi" className="label-caps shrink-0 border-b border-onyx pb-1 text-onyx">Saring per jenis</Link>
+          <Link href="/koleksi" className="label-caps inline-flex min-h-11 shrink-0 items-center border-b border-onyx text-onyx">Saring per jenis</Link>
         </div>
         <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4">
           {ITEM.map((i) => <li key={i.slug}><KartuItem item={i} /></li>)}
