@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ITEM, KAPSUL, SITE, gelombang, itemBySlug, rp } from '@/lib/koleksi';
-import { ContohKain, LabelJahit } from '../../components/KartuItem';
+import { LabelJahit } from '../../components/KartuItem';
 import LabelRawat from '../../components/LabelRawat';
 import PraPesan from '../../components/PraPesan';
 
@@ -34,30 +34,23 @@ export default async function Item({ params }) {
   if (!item) notFound();
   const g = gelombang();
   const padanan = ITEM.filter((x) => x.slug !== item.slug && x.jenis !== item.jenis).slice(0, 3);
-  const ld = { '@context': 'https://schema.org', '@type': 'Product', name: item.nama, image: `${SITE}/images/koleksi/${item.slug}-${item.warna[0][1].slice(1)}.webp`, material: item.bahan, brand: { '@type': 'Brand', name: 'Modewear' }, offers: { '@type': 'Offer', price: item.harga, priceCurrency: 'IDR', availability: 'https://schema.org/PreOrder' } };
+  const ld = { '@context': 'https://schema.org', '@type': 'Product', name: item.nama, image: `${SITE}/images/koleksi/${item.slug}.webp`, material: item.bahan, brand: { '@type': 'Brand', name: 'Modewear' }, offers: { '@type': 'Offer', price: item.harga, priceCurrency: 'IDR', availability: 'https://schema.org/PreOrder' } };
 
   return (
     <main className="bg-bone px-6 pt-24 pb-20 md:pt-28 md:pb-24">
       <div className="mx-auto grid max-w-6xl gap-10 md:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
-        <div className="grid grid-cols-2 gap-3 self-start sm:gap-4 lg:sticky lg:top-24">
-          {item.warna.map(([n, h], i) => (
-            <figure key={n}>
-              <Image
-                src={`/images/koleksi/${item.slug}-${h.slice(1)}.webp`}
-                alt={`${item.nama} warna ${n.toLowerCase()}, gambar teknis tampak depan`}
-                width={960}
-                height={1200}
-                priority={i === 0}
-                sizes="(min-width: 1152px) 18rem, (min-width: 1024px) 25vw, 45vw"
-                className="aspect-[4/5] h-auto w-full object-cover"
-              />
-              <figcaption className="label-caps mt-2 flex items-center gap-2 text-thread">
-                <ContohKain hex={h} className="h-3.5 w-3.5 shrink-0 border border-onyx/20" />
-                {n}
-              </figcaption>
-            </figure>
-          ))}
-          <div className="col-span-2"><LabelJahit item={item} /></div>
+        <div className="self-start lg:sticky lg:top-24">
+          <Image
+            src={`/images/koleksi/${item.slug}.webp`}
+            alt={`Foto contoh ${item.nama.toLowerCase()}`}
+            width={960}
+            height={1200}
+            priority
+            sizes="(min-width: 1024px) 28rem, 100vw"
+            className="aspect-[4/5] h-auto w-full object-cover"
+          />
+          <p className="mt-3 text-xs leading-relaxed text-thread">Foto hanya contoh potongan sejenis. Warna kain sebenarnya dipilih lewat chip warna di samping.</p>
+          <div className="mt-6"><LabelJahit item={item} /></div>
         </div>
 
         <div>

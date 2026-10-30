@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { rp } from '@/lib/koleksi';
 import LabelRawat from './LabelRawat';
 
-/* Kartu potongan pakaian: gambar teknis (flat) dalam warna kain pertama di atas latar sewarna kain,
-   label jahit menempel di atasnya. Produknya fiktif, jadi gambarnya ilustrasi, bukan foto produk. */
+/* Kartu potongan pakaian: foto contoh (CC0, potongan sejenis) dengan label jahit menempel di atasnya.
+   Produknya fiktif; warna kain ditampilkan lewat chip, bukan lewat foto yang diwarnai ulang. */
 export function ContohKain({ hex, className = '' }) {
   return (
     <div
